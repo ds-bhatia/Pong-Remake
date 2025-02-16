@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7eyubtxgnldc"]
+
+[ext_resource type="PackedScene" uid="uid://cdweop4es8ny2" path="res://player1.tscn" id="1_h1bbx"]
+[ext_resource type="Texture2D" uid="uid://81xtbuh33ebs" path="res://arts/Board.png" id="1_vj1tw"]
+[ext_resource type="FontFile" uid="uid://r0h8snk18xky" path="res://fonts/bit5x3.ttf" id="2_6w5rn"]
+[ext_resource type="PackedScene" uid="uid://e0p8jo6akhom" path="res://player2.tscn" id="2_q0q0m"]
+[ext_resource type="PackedScene" uid="uid://ci088tf6oae31" path="res://ball.tscn" id="3_iq5ss"]
+
+[node name="Main" type="Node"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1156.0
+offset_bottom = 645.0
+texture = ExtResource("1_vj1tw")
+
+[node name="P1Score" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 8.0
+offset_right = -40.0
+offset_bottom = 38.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_6w5rn")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="P2Score" type="Label" parent="."]
+offset_left = 624.0
+offset_top = 8.0
+offset_right = 664.0
+offset_bottom = 38.0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_6w5rn")
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Player1" parent="." instance=ExtResource("1_h1bbx")]
+position = Vector2(8, 320)
+rotation = -3.1413
+
+[node name="Player2" parent="." instance=ExtResource("2_q0q0m")]
+position = Vector2(1136, 320)
+rotation = 3.14159
+
+[node name="Ball" parent="." instance=ExtResource("3_iq5ss")]
+position = Vector2(578, 320)
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -16.0
+offset_top = 8.0
+offset_right = 24.0
+offset_bottom = 38.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_6w5rn")
+theme_override_font_sizes/font_size = 40
+text = "-"
+horizontal_alignment = 1
+vertical_alignment = 1
