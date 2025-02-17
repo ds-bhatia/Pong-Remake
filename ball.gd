@@ -1,11 +1,13 @@
 extends RigidBody2D
 var speed = 500
 var velocity = Vector2.ZERO
+var angle
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	velocity.x = randf_range(-1.0, 1.0)
-	velocity.y = randf_range(-1.0, 1.0)
+	angle = [randf_range(-PI/4, PI/4), randf_range(3*PI/4, 5*PI/4)].pick_random()
+	velocity.x = speed * cos(angle)
+	velocity.y = speed * sin(angle)
 	velocity = velocity.normalized()
 
 
