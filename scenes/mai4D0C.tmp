@@ -47,16 +47,23 @@ metadata/_edit_use_anchors_ = true
 [node name="Player1" parent="." instance=ExtResource("1_h1bbx")]
 position = Vector2(8, 320)
 rotation = -3.1413
+collision_layer = 2
+collision_mask = 4
 
 [node name="Player2" parent="." instance=ExtResource("2_q0q0m")]
 position = Vector2(1136, 320)
 rotation = 3.14159
+collision_layer = 2
+collision_mask = 4
 slide_on_ceiling = false
 
 [node name="Ball" parent="." instance=ExtResource("3_iq5ss")]
 position = Vector2(-62, 111)
+collision_layer = 4
+collision_mask = 3
 
 [node name="RestartTimer" type="Timer" parent="Ball"]
+wait_time = 3.0
 one_shot = true
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Ball"]
@@ -77,11 +84,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="wallTop" parent="." instance=ExtResource("6_kcrp7")]
-position = Vector2(14, -8)
+position = Vector2(14, -10)
 
 [node name="wallBottom" parent="." instance=ExtResource("6_kcrp7")]
-position = Vector2(10, 651)
+position = Vector2(17, 655)
 rotation = 0.000104315
 
-[connection signal="timeout" from="Ball/RestartTimer" to="Ball" method="_on_restart_timer_timeout"]
+[connection signal="timeout" from="Ball/RestartTimer" to="." method="_on_restart_timer_timeout"]
 [connection signal="screen_exited" from="Ball/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
