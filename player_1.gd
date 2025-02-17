@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 var speed = 500
 var screen_size
