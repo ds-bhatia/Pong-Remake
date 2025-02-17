@@ -7,16 +7,16 @@
 radius = 3.5
 
 [node name="Ball" type="RigidBody2D"]
-position = Vector2(221, 76)
+position = Vector2(224, 65)
 collision_layer = 4
 collision_mask = 3
 gravity_scale = 0.0
 script = ExtResource("1_mqt2k")
 metadata/_edit_group_ = true
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5qheh")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_jn5kq")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_5qheh")

@@ -11,11 +11,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var collision_info = move_and_collide(velocity * delta)
 	if collision_info:
-		speed = 600
+		speed += 50
 		velocity = velocity.bounce(collision_info.get_normal())
 	position += velocity * speed * delta
 
 func spawn_ball():
+	speed = 500
 	position = Vector2(578, 320)
 	$RestartTimer.start()
 
