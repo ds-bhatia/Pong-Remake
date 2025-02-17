@@ -14,7 +14,6 @@ metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = -0.0014052
-scale = Vector2(1, 1)
 texture = ExtResource("1_mwd0r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

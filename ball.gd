@@ -15,5 +15,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	var collision_info = move_and_collide(velocity * delta)
 	if collision_info:
+		speed = 600
 		velocity = velocity.bounce(collision_info.get_normal())
 	position += velocity * speed * delta

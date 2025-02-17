@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://b7eyubtxgnldc"]
+[gd_scene load_steps=8 format=3 uid="uid://b7eyubtxgnldc"]
 
 [ext_resource type="PackedScene" uid="uid://cdweop4es8ny2" path="res://player1.tscn" id="1_h1bbx"]
+[ext_resource type="Script" path="res://main.gd" id="1_s5tfy"]
 [ext_resource type="Texture2D" uid="uid://81xtbuh33ebs" path="res://arts/Board.png" id="1_vj1tw"]
 [ext_resource type="FontFile" uid="uid://r0h8snk18xky" path="res://fonts/bit5x3.ttf" id="2_6w5rn"]
 [ext_resource type="PackedScene" uid="uid://e0p8jo6akhom" path="res://player2.tscn" id="2_q0q0m"]
@@ -8,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://csu2e82m2emwm" path="res://wall.tscn" id="6_kcrp7"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_s5tfy")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1156.0
@@ -60,6 +62,8 @@ position = Vector2(578, 320)
 collision_layer = 4
 collision_mask = 3
 
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Ball"]
+
 [node name="Label" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
@@ -81,3 +85,5 @@ position = Vector2(14, -10)
 [node name="wallBottom" parent="." instance=ExtResource("6_kcrp7")]
 position = Vector2(17, 655)
 rotation = 0.000104315
+
+[connection signal="screen_exited" from="Ball/VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
