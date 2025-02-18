@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	position += velocity * speed * delta
 
 func spawn_ball(p1Score, p2Score):
-	speed = 500
+	speed = 500 + 15*(p1Score+p2Score)
 	position = Vector2(578, 320)
 	$RestartTimer.start()
 
