@@ -17,4 +17,4 @@ func _on_visible_on_screen_notifier_2d_screen_exited():
 	else:
 		p2Score += 1
 		$P2Score.text = str(p2Score)
-	$Ball.spawn_ball()
+	$Ball.spawn_ball(p1Score, p2Score)

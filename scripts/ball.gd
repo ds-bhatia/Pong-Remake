@@ -4,7 +4,7 @@ var velocity = Vector2.ZERO
 var angle
 
 func _ready() -> void:
-	spawn_ball()
+	spawn_ball(0,0)
 	
 func _process(delta: float) -> void:
 	var collision_info = move_and_collide(velocity * delta)
@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 		velocity = velocity.bounce(collision_info.get_normal())
 	position += velocity * speed * delta
 
-func spawn_ball():
+func spawn_ball(p1Score, p2Score):
 	speed = 500
 	position = Vector2(578, 320)
 	$RestartTimer.start()

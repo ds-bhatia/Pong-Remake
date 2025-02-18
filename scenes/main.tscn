@@ -55,6 +55,7 @@ slide_on_ceiling = false
 
 [node name="Ball" parent="." instance=ExtResource("3_iq5ss")]
 position = Vector2(-62, 111)
+speed = 500
 
 [node name="RestartTimer" type="Timer" parent="Ball"]
 one_shot = true
